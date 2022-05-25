@@ -75,4 +75,80 @@ class TiporeservaEliminar(SuccessMessageMixin, DeleteView):
         messages.success (self.request, (success_message))       
         return reverse('leer') # Redireccionamos a la vista principal 'leer'
 
+#
+class ListadoComentarios(ListView):
+    model =  Comentarios
+    
+    
+class  ComentariosCrear(SuccessMessageMixin, CreateView):
+    model = Comentarios
+    form =  Comentarios
+    fields = "__all__"
+    success_message =' Comentarios creada correctamente'
+     
+    def get_success_url(self):        
+        return reverse('leer') # Redireccionamos a la vista principal 'leer'
+
+class  ComentariosDetalle (DetailView):
+    model = Comentarios
+
+class   ComentariosActualizar(SuccessMessageMixin,UpdateView):
+    model =   Comentarios
+    form =  Comentarios
+    fields = "__all__" # Le decimos a Django que muestre todos los campos de la tabla 'postres' de nuestra Base de Datos 
+    success_message = ' Comentarios Actualizado Correctamente !' # Mostramos este Mensaje luego de Editar un Postre 
+
+    def get_success_url(self):               
+        return reverse('leer') # Redireccionamos a la vista principal 'leer'
+class  ComentariosEliminar(SuccessMessageMixin, DeleteView): 
+    model =  Comentarios 
+    form =  Comentarios
+    fields = "__all__"     
+ 
+    # Redireccionamos a la página principal luego de eliminar un registro o postre
+    def get_success_url(self): 
+        success_message = ' Comentarios Eliminado Correctamente !' # Mostramos este Mensaje luego de Editar un Postre 
+        messages.success (self.request, (success_message))       
+        return reverse('leer') # Redireccionamos a la vista principal 'leer'
+
+
+
+#
+class ListadoRutas(ListView):
+    model = Rutas
+    
+    
+class  RutasCrear(SuccessMessageMixin, CreateView):
+    model = Rutas
+    form =  Rutas
+    fields = "__all__"
+    success_message =' Rutas creada correctamente'
+     
+    def get_success_url(self):        
+        return reverse('leer') # Redireccionamos a la vista principal 'leer'
+
+class  RutasDetalle (DetailView):
+    model = Rutas
+
+class   RutasActualizar(SuccessMessageMixin,UpdateView):
+    model =   Rutas
+    form =  Rutas
+    fields = "__all__" # Le decimos a Django que muestre todos los campos de la tabla 'postres' de nuestra Base de Datos 
+    success_message = ' Rutas Actualizado Correctamente !' # Mostramos este Mensaje luego de Editar un Postre 
+
+    def get_success_url(self):               
+        return reverse('leer') # Redireccionamos a la vista principal 'leer'
+class  RutasEliminar(SuccessMessageMixin, DeleteView): 
+    model =  Rutas
+    form =  Rutas
+    fields = "__all__"     
+ 
+    # Redireccionamos a la página principal luego de eliminar un registro o postre
+    def get_success_url(self): 
+        success_message = ' Rutas Eliminado Correctamente !' # Mostramos este Mensaje luego de Editar un Postre 
+        messages.success (self.request, (success_message))       
+        return reverse('leer') # Redireccionamos a la vista principal 'leer'
+ 
+
+
     
