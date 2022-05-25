@@ -148,6 +148,87 @@ class  RutasEliminar(SuccessMessageMixin, DeleteView):
         success_message = ' Rutas Eliminado Correctamente !' # Mostramos este Mensaje luego de Editar un Postre 
         messages.success (self.request, (success_message))       
         return reverse('leer') # Redireccionamos a la vista principal 'leer'
+
+#
+
+class ListadoTipolugar(ListView):
+    model = Tipolugar
+    
+    
+class TipolugarCrear(SuccessMessageMixin, CreateView):
+    model =Tipolugar
+    form = Tipolugar
+    fields = "__all__"
+    success_message ='Tipolugar creada correctamente'
+     
+    def get_success_url(self):        
+        return reverse('leer') # Redireccionamos a la vista principal 'leer'
+
+class TipolugarDetalle (DetailView):
+    model =Tipolugar
+
+class  TipolugarActualizar(SuccessMessageMixin,UpdateView):
+    model =  Tipolugar
+    form = Tipolugar
+    fields = "__all__" # Le decimos a Django que muestre todos los campos de la tabla 'postres' de nuestra Base de Datos 
+    success_message = 'Tipolugar Actualizado Correctamente !' # Mostramos este Mensaje luego de Editar un Postre 
+
+    def get_success_url(self):               
+        return reverse('leer') # Redireccionamos a la vista principal 'leer'
+class TipolugarEliminar(SuccessMessageMixin, DeleteView): 
+    model = Tipolugar 
+    form = Tipolugar
+    fields = "__all__"     
+ 
+    # Redireccionamos a la página principal luego de eliminar un registro o postre
+    def get_success_url(self): 
+        success_message = 'Tipolugar Eliminado Correctamente !' # Mostramos este Mensaje luego de Editar un Postre 
+        messages.success (self.request, (success_message))       
+        return reverse('leer') # Redireccionamos a la vista principal 'leer'
+
+# 
+
+class ListadoEmpresa(ListView):
+    model = Empresa
+    
+    
+class EmpresaCrear(SuccessMessageMixin, CreateView):
+    model =Empresa
+    form = Empresa
+    fields = "__all__"
+    success_message ='Empresa creada correctamente'
+     
+    def get_success_url(self):        
+        return reverse('leer') # Redireccionamos a la vista principal 'leer'
+
+class EmpresaDetalle (DetailView):
+    model =Empresa
+
+class  EmpresaActualizar(SuccessMessageMixin,UpdateView):
+    model =  Empresa
+    form = Empresa
+    fields = "__all__" # Le decimos a Django que muestre todos los campos de la tabla 'postres' de nuestra Base de Datos 
+    success_message = 'Empresa Actualizado Correctamente !' # Mostramos este Mensaje luego de Editar un Postre 
+
+    def get_success_url(self):               
+        return reverse('leer') # Redireccionamos a la vista principal 'leer'
+class EmpresaEliminar(SuccessMessageMixin, DeleteView): 
+    model = Empresa 
+    form = Empresa
+    fields = "__all__"     
+ 
+    # Redireccionamos a la página principal luego de eliminar un registro o postre
+    def get_success_url(self): 
+        success_message = 'Empresa Eliminado Correctamente !' # Mostramos este Mensaje luego de Editar un Postre 
+        messages.success (self.request, (success_message))       
+        return reverse('leer') # Redireccionamos a la vista principal 'leer'
+
+
+#
+
+
+ 
+
  
 
 

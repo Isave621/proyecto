@@ -65,7 +65,42 @@ urlpatterns = [
  
     # La ruta 'eliminar' que usaremos para eliminar un rutas o registro de la Base de Datos 
     path('rutas/eliminar/<int:pk>', RutasEliminar.as_view(), name='rutas/eliminar.html'),    
+
+
+    path('tipolugar/', ListadoTipolugar.as_view(template_name = "tipolugar/inicio.html"), name='leer'),
+ 
+    # La ruta 'detalles' en donde mostraremos una página con los detalles de un tipolugar o registro 
+    path('tipolugar/detalle/<int:pk>', TipolugarDetalle.as_view(template_name = "tipolugar/detalle.html"), name='detalles'),
+ 
+    # La ruta 'crear' en donde mostraremos un formulario para crear un nuevo tipolugar o registro  
+    path('tipolugar/crear', TipolugarCrear.as_view(template_name = "tipolugar/crear.html"), name='crear'),
+ 
+    # La ruta 'actualizar' en donde mostraremos un formulario para actualizar un tipolugaro registro de la Base de Datos 
+    path('tipolugar/editar/<int:pk>', TipolugarActualizar.as_view(template_name = "tipolugar/actualizar.html"), name='actualizar'), 
+ 
+    # La ruta 'eliminar' que usaremos para eliminar un tipolugar o registro de la Base de Datos 
+    path('tipolugar/eliminar/<int:pk>', TipolugarEliminar.as_view(), name='tipolugar/eliminar.html'),    
+    
+    
+    path('empresa/', ListadoEmpresa.as_view(template_name = "empresa/inicio.html"), name='leer'),
+ 
+    # La ruta 'detalles' en donde mostraremos una página con los detalles de un empresa o registro 
+    path('empresa/detalle/<int:pk>', EmpresaDetalle.as_view(template_name = "empresa/detalle.html"), name='detalles'),
+ 
+    # La ruta 'crear' en donde mostraremos un formulario para crear un nuevo empresa o registro  
+    path('empresa/crear', EmpresaCrear.as_view(template_name = "empresa/crear.html"), name='crear'),
+ 
+    # La ruta 'actualizar' en donde mostraremos un formulario para actualizar un empresao registro de la Base de Datos 
+    path('empresa/editar/<int:pk>', EmpresaActualizar.as_view(template_name = "empresa/actualizar.html"), name='actualizar'), 
+ 
+    # La ruta 'eliminar' que usaremos para eliminar un empresa o registro de la Base de Datos 
+    path('empresa/eliminar/<int:pk>', EmpresaEliminar.as_view(), name='empresa/eliminar.html'),
+    
 ]
+    
+
+    
+
    
 
 
