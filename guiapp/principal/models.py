@@ -218,7 +218,7 @@ class Persona(models.Model):
     edad = models.IntegerField(db_column='Edad', blank=True, null=True)  # Field name made lowercase.
     celular = models.IntegerField(db_column='Celular', blank=True, null=True)  # Field name made lowercase.
     fechanacimiento = models.DateField(db_column='FechaNacimiento', blank=True, null=True)  # Field name made lowercase.
-    contrasena = models.CharField(db_column='Contrasena', max_length=45, blank=True, null=True)  # Field name made lowercase.
+    contrasena = models.CharField(db_column='Contraseña', max_length=45, blank=True, null=True)  # Field name made lowercase.
     sexo = models.CharField(db_column='Sexo', max_length=45, blank=True, null=True)  # Field name made lowercase.
     tipopersona_idtipocliente = models.IntegerField(db_column='TipoPersona_idTipoCliente')  # Field name made lowercase.
     empresa_idempresa = models.IntegerField(db_column='Empresa_idEmpresa')  # Field name made lowercase.
@@ -238,7 +238,7 @@ class Reservas(models.Model):
     cliente = models.CharField(db_column='Cliente', max_length=45, blank=True, null=True)  # Field name made lowercase.
     comprobante = models.CharField(db_column='Comprobante', max_length=45, blank=True, null=True)  # Field name made lowercase.
     cupoadulto = models.IntegerField(db_column='CupoAdulto', blank=True, null=True)  # Field name made lowercase.
-    cuponino = models.IntegerField(db_column='CupoNino', blank=True, null=True)  # Field name made lowercase.
+    cuponino = models.IntegerField(db_column='CupoNiño', blank=True, null=True)  # Field name made lowercase.
     telefono = models.IntegerField(db_column='Telefono', blank=True, null=True)  # Field name made lowercase.
     tiporeserva_idtiporeserva = models.IntegerField(db_column='TipoReserva_idTipoReserva')  # Field name made lowercase.
 

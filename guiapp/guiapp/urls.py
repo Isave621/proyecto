@@ -15,10 +15,25 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
-from principal.views import formulario, contactar
+from principal.views import TiporeservaActualizar, TiporeservaCrear, TiporeservaDetalle, TiporeservaEliminar, ListadoTiporeserva, formulario, contactar, indexprincipal
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('formulario/', formulario),
     path('contactar/', contactar),
+    path('indexprincipal/', indexprincipal),
+        path('Tiporeserva/', ListadoTiporeserva.as_view(template_name = "Tiporeserva/index.html"), name='leer'),
+ 
+    # La ruta 'detalles' en donde mostraremos una página con los detalles de un Tiporeserva o registro 
+    path('Tiporeserva/detalle/<int:pk>', TiporeservaDetalle.as_view(template_name = "Tiporeserva/detalle.html"), name='detalles'),
+ 
+    # La ruta 'crear' en donde mostraremos un formulario para crear un nuevo Tiporeserva o registro  
+    path('Tiporeserva/crear', TiporeservaCrear.as_view(template_name = "Tiporeserva/crear.html"), name='crear'),
+ 
+    # La ruta 'actualizar' en donde mostraremos un formulario para actualizar un Tiporeservao registro de la Base de Datos 
+    path('Tiporeserva/editar/<int:pk>', TiporeservaActualizar.as_view(template_name = "Tiporeserva/actualizar.html"), name='actualizar'), 
+ 
+    # La ruta 'eliminar' que usaremos para eliminar un Tiporeserva o registro de la Base de Datos 
+    path('Tiporeserva/eliminar/<int:pk>', TiporeservaEliminar.as_view(), name='Tiporeserva/eliminar.html'), 
+
     ]
