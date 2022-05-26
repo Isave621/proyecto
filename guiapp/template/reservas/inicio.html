@@ -27,41 +27,39 @@
         <thead>
           <tr>
             <th width="35%">Código de reservas </th>
-            <th>Activo</th>
-            <th>Inactivo</th>
-            <th>Activo</th>
-            <th>Inactivo</th>
-            <th>Activo</th>
-            <th>Inactivo</th>
-            <th>Activo</th>
-            <th>Inactivo</th>
-            <th>Inactivo</th>
+            <th>Estador</th>
+            <th>Fechainicio</th>
+            <th>Fechafinal</th>
+            <th>Cliente</th>
+            <th>Comprobante</th>
+            <th>Cupoadulto</th>
+            <th>Cuponino</th>
+            <th>Telefono</th>
           </tr>
         </thead>
         <tbody>
         
         <!-- Recorremos los objetos o registros que tenemos en nuestra tabla 'treserva' y los listamos -->
-        {% for truta in object_list %}
+        {% for reser in object_list %}
           <tr>
-            <td>{{ truta.idestadocliente }}</td>
-            <td>{{ truta.activo }}</td>
-            <td>{{ truta.inactivo }}</td>
-            <td>{{ truta.activo }}</td>
-            <td>{{ truta.inactivo }}</td>
-            <td>{{ truta.activo }}</td>
-            <td>{{ truta.inactivo }}</td>
-            <td>{{ truta.activo }}</td>
-            <td>{{ truta.inactivo }}</td>
-            <td>{{ truta.activo }}</td>
+            <td>{{ reser.idestadocliente }}</td>
+            <td>{{ reser.estador}}</td>
+            <td>{{ reser.fechainicio }}</td>
+            <td>{{ reser.fechafinal}}</td>
+            <td>{{ reser.cliente}}</td>
+            <td>{{ reser.comprobante}}</td>
+            <td>{{ reser.cupoadulto}}</td>
+            <td>{{ reser.cuponino}}</td>
+            <td>{{ reser.telefono }}</td>
             <td>
              <!-- Usaremos un formulario que realizará la tarea de eliminar un registro o postre desde la misma tabla HTML -->                        
-        <form method="POST" action="eliminar/{{truta.idreservas}">
+        <form method="POST" action="eliminar/{{reser.idreservas}">
             {% csrf_token %}
             <div class="btn-group">
    
               <!-- Creamos 3 botones que son ver, Editar y Eliminar, nos sirven para gestionar nuestros registros o postres -->
-              <a href="detalle/{{truta.idreservas}" title="Ver" type="button" class="btn btn-success">Ver </a>
-              <a href="editar/{{truta.idestadocliente }}" title="Editar" type="button" class="btn btn-primary">Editar </a>
+              <a href="detalle/{{reser.idreservas}" title="Ver" type="button" class="btn btn-success">Ver </a>
+              <a href="editar/{{reser.idreservas }}" title="Editar" type="button" class="btn btn-primary">Editar </a>
               <button class="btn btn-danger" onclick="return eliminar();" type="submit">
                 Eliminar
               </button>

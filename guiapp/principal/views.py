@@ -26,7 +26,12 @@ def inicio(request):
     return HttpResponse ("<h1>Bienvenido a Tu Destino</h1>")
 
 def comienzo(request):
-    return render (request,'paginas/start.html')
+    return render (request,'paginas/base.html')
+    
+def usuario(request):
+    return render (request,'paginas/admin.html')
+
+
 
 
 
@@ -356,6 +361,7 @@ class ReservasEliminar(SuccessMessageMixin, DeleteView):
        
 
 
+#
  
 
  

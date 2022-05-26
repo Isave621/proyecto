@@ -23,6 +23,8 @@ urlpatterns = [
     path('indexprincipal/', indexprincipal),
     path('inicio/', inicio),
     path('comienzo/', comienzo),
+    path('usuario/', usuario),
+
     path('tiporeserva/', ListadoTiporeserva.as_view(template_name = "tiporeserva/inicio.html"), name='leer'),
     
     # La ruta 'detalles' en donde mostraremos una página con los detalles de un Tiporeserva o registro 
@@ -102,6 +104,8 @@ urlpatterns = [
 
 
 
+
+
     path('estadocliente/', ListadoEstadocliente.as_view(template_name = "estadocliente/inicio.html"), name='leer'),
  
     # La ruta 'detalles' en donde mostraremos una página con los detalles de un Estadocliente o registro 
@@ -151,6 +155,20 @@ urlpatterns = [
     path('reservas/eliminar/<int:pk>', ReservasEliminar.as_view(), name='reservas/eliminar.html'),    
 
  
+
+   #path('Serviciotour/', ListadoServiciotour.as_view(template_name = "Serviciotour/inicio.html"), name='leer'),
+ 
+    # La ruta 'detalles' en donde mostraremos una página con los detalles de un Serviciotour o registro 
+    #path('Serviciotour/detalle/<int:pk>', ServiciotourDetalle.as_view(template_name = "Serviciotour/detalle.html"), name='detalles'),
+ 
+    # La ruta 'crear' en donde mostraremos un formulario para crear un nuevo Serviciotour o registro  
+    #path('Serviciotour/crear', ServiciotourCrear.as_view(template_name = "Serviciotour/crear.html"), name='crear'),
+ 
+    # La ruta 'actualizar' en donde mostraremos un formulario para actualizar un Serviciotouro registro de la Base de Datos 
+    #path('Serviciotour/editar/<int:pk>', ServiciotourActualizar.as_view(template_name = "Serviciotour/actualizar.html"), name='actualizar'), 
+ 
+    # La ruta 'eliminar' que usaremos para eliminar un Serviciotour o registro de la Base de Datos 
+    #path('Serviciotour/eliminar/<int:pk>', ServiciotourEliminar.as_view(), name='Serviciotour/eliminar.html'),
 ]
 
 
