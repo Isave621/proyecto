@@ -1,6 +1,7 @@
 from django.shortcuts import render
 from django.conf import settings
 from django.core.mail import send_mail
+from django.http import HttpResponse 
 
 # librerias del crud
 from django.shortcuts import render
@@ -20,6 +21,20 @@ from django import forms
 
 
 # Create your views here.
+
+def inicio(request):
+    return HttpResponse ("<h1>Bienvenido a Tu Destino</h1>")
+
+def comienzo(request):
+    return render (request,'paginas/start.html')
+
+
+
+
+
+
+
+
 def formulario(request):
     return render (request, "formularioContacto.html")
 
@@ -224,7 +239,121 @@ class EmpresaEliminar(SuccessMessageMixin, DeleteView):
         return reverse('leer') # Redireccionamos a la vista principal 'leer'
 
 
+
+
 #
+class ListadoEstadocliente(ListView):
+    model = Estadocliente
+    
+    
+class EstadoclienteCrear(SuccessMessageMixin, CreateView):
+    model =Estadocliente
+    form = Estadocliente
+    fields = "__all__"
+    success_message ='Estadocliente creada correctamente'
+     
+    def get_success_url(self):        
+        return reverse('leer') # Redireccionamos a la vista principal 'leer'
+
+class EstadoclienteDetalle (DetailView):
+    model =Estadocliente
+
+class  EstadoclienteActualizar(SuccessMessageMixin,UpdateView):
+    model =  Estadocliente
+    form = Estadocliente
+    fields = "__all__" # Le decimos a Django que muestre todos los campos de la tabla 'postres' de nuestra Base de Datos 
+    success_message = 'Estadocliente Actualizado Correctamente !' # Mostramos este Mensaje luego de Editar un Postre 
+
+    def get_success_url(self):               
+        return reverse('leer') # Redireccionamos a la vista principal 'leer'
+class EstadoclienteEliminar(SuccessMessageMixin, DeleteView): 
+    model = Estadocliente 
+    form = Estadocliente
+    fields = "__all__"     
+ 
+    # Redireccionamos a la página principal luego de eliminar un registro o postre
+    def get_success_url(self): 
+        success_message = 'Estadocliente Eliminado Correctamente !' # Mostramos este Mensaje luego de Editar un Postre 
+        messages.success (self.request, (success_message))       
+        return reverse('leer') # Redireccionamos a la vista principal 'leer'
+
+
+
+#
+class ListadoTipodocumento(ListView):
+    model = Tipodocumento
+    
+    
+class TipodocumentoCrear(SuccessMessageMixin, CreateView):
+    model =Tipodocumento
+    form = Tipodocumento
+    fields = "__all__"
+    success_message ='Tipodocumento creada correctamente'
+     
+    def get_success_url(self):        
+        return reverse('leer') # Redireccionamos a la vista principal 'leer'
+
+class TipodocumentoDetalle (DetailView):
+    model =Tipodocumento
+
+class  TipodocumentoActualizar(SuccessMessageMixin,UpdateView):
+    model =  Tipodocumento
+    form = Tipodocumento
+    fields = "__all__" # Le decimos a Django que muestre todos los campos de la tabla 'postres' de nuestra Base de Datos 
+    success_message = 'Tipodocumento Actualizado Correctamente !' # Mostramos este Mensaje luego de Editar un Postre 
+
+    def get_success_url(self):               
+        return reverse('leer') # Redireccionamos a la vista principal 'leer'
+class TipodocumentoEliminar(SuccessMessageMixin, DeleteView): 
+    model = Tipodocumento 
+    form = Tipodocumento
+    fields = "__all__"     
+ 
+    # Redireccionamos a la página principal luego de eliminar un registro o postre
+    def get_success_url(self): 
+        success_message = 'Tipodocumento Eliminado Correctamente !' # Mostramos este Mensaje luego de Editar un Postre 
+        messages.success (self.request, (success_message))       
+        return reverse('leer') # Redireccionamos a la vista principal 'leer'
+
+
+
+
+#
+class ListadoReservas(ListView):
+    model = Reservas
+    
+    
+class ReservasCrear(SuccessMessageMixin, CreateView):
+    model =Reservas
+    form = Reservas
+    fields = "__all__"
+    success_message ='Reservas creada correctamente'
+     
+    def get_success_url(self):        
+        return reverse('leer') # Redireccionamos a la vista principal 'leer'
+
+class ReservasDetalle (DetailView):
+    model =Reservas
+
+class  ReservasActualizar(SuccessMessageMixin,UpdateView):
+    model =  Reservas
+    form = Reservas
+    fields = "__all__" # Le decimos a Django que muestre todos los campos de la tabla 'postres' de nuestra Base de Datos 
+    success_message = 'Reservas Actualizado Correctamente !' # Mostramos este Mensaje luego de Editar un Postre 
+
+    def get_success_url(self):               
+        return reverse('leer') # Redireccionamos a la vista principal 'leer'
+class ReservasEliminar(SuccessMessageMixin, DeleteView): 
+    model = Reservas 
+    form = Reservas
+    fields = "__all__"     
+ 
+    # Redireccionamos a la página principal luego de eliminar un registro o postre
+    def get_success_url(self): 
+        success_message = 'Reservas Eliminado Correctamente !' # Mostramos este Mensaje luego de Editar un Postre 
+        messages.success (self.request, (success_message))       
+        return reverse('leer') # Redireccionamos a la vista principal 'leer'
+       
 
 
  

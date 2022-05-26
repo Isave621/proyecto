@@ -1,0 +1,19 @@
+{# Cargamos la librería #}
+  {% load bootstrap4 %}
+ 
+  {# CSS Bootstrap #}
+  {% bootstrap_css %} 
+
+  {# Widget Tweaks #}
+  {% load widget_tweaks %}
+
+<h4>Detalles</h4>
+ 
+<p><span class="txt_negrita">Codigo de categoria:</span> <br> {{object.idestadocliente}}</p>
+<p><span class="txt_negrita">Activo:</span> <br> {{object.activo}}</p>
+<p><span class="txt_negrita">inactivo:</span> <br> {{object.inactivo}}</p>
+<p><span class="txt_negrita">Creado:</span> <br> {{object.created_at}}</p>
+<p><span class="txt_negrita">Actualizado:</span> <br> {{object.updated_at}}</p>
+ 
+<!-- Botón para volver a la vista principal (Home) -->
+<a href="../" type="submit" class="btn btn-primary">Volver</a>

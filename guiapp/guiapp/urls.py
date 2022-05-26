@@ -21,6 +21,8 @@ urlpatterns = [
     path('formulario/', formulario),
     path('contactar/', contactar),
     path('indexprincipal/', indexprincipal),
+    path('inicio/', inicio),
+    path('comienzo/', comienzo),
     path('tiporeserva/', ListadoTiporeserva.as_view(template_name = "tiporeserva/inicio.html"), name='leer'),
     
     # La ruta 'detalles' en donde mostraremos una página con los detalles de un Tiporeserva o registro 
@@ -82,6 +84,7 @@ urlpatterns = [
     path('tipolugar/eliminar/<int:pk>', TipolugarEliminar.as_view(), name='tipolugar/eliminar.html'),    
     
     
+
     path('empresa/', ListadoEmpresa.as_view(template_name = "empresa/inicio.html"), name='leer'),
  
     # La ruta 'detalles' en donde mostraremos una página con los detalles de un empresa o registro 
@@ -96,7 +99,61 @@ urlpatterns = [
     # La ruta 'eliminar' que usaremos para eliminar un empresa o registro de la Base de Datos 
     path('empresa/eliminar/<int:pk>', EmpresaEliminar.as_view(), name='empresa/eliminar.html'),
     
+
+
+
+    path('estadocliente/', ListadoEstadocliente.as_view(template_name = "estadocliente/inicio.html"), name='leer'),
+ 
+    # La ruta 'detalles' en donde mostraremos una página con los detalles de un Estadocliente o registro 
+    path('estadocliente/detalle/<int:pk>', EstadoclienteDetalle.as_view(template_name = "estadocliente/detalle.html"), name='detalles'),
+ 
+    # La ruta 'crear' en donde mostraremos un formulario para crear un nuevo Estadocliente o registro  
+    path('estadocliente/crear', EstadoclienteCrear.as_view(template_name = "estadocliente/crear.html"), name='crear'),
+ 
+    # La ruta 'actualizar' en donde mostraremos un formulario para actualizar un Estadoclienteo registro de la Base de Datos 
+    path('estadocliente/editar/<int:pk>', EstadoclienteActualizar.as_view(template_name = "estadocliente/actualizar.html"), name='actualizar'), 
+ 
+    # La ruta 'eliminar' que usaremos para eliminar un Estadocliente o registro de la Base de Datos 
+    path('estadocliente/eliminar/<int:pk>', EstadoclienteEliminar.as_view(), name='estadocliente/eliminar.html'),    
+
+    
+    
+    
+    path('tipodocumento/', ListadoTipodocumento.as_view(template_name = "tipodocumento/inicio.html"), name='leer'),
+ 
+    # La ruta 'detalles' en donde mostraremos una página con los detalles de un Tipodocumento o registro 
+    path('tipodocumento/detalle/<int:pk>', TipodocumentoDetalle.as_view(template_name = "tipodocumento/detalle.html"), name='detalles'),
+ 
+    # La ruta 'crear' en donde mostraremos un formulario para crear un nuevo Tipodocumento o registro  
+    path('tipodocumento/crear', TipodocumentoCrear.as_view(template_name = "tipodocumento/crear.html"), name='crear'),
+ 
+    # La ruta 'actualizar' en donde mostraremos un formulario para actualizar un Tipodocumentoo registro de la Base de Datos 
+    path('tipodocumento/editar/<int:pk>', TipodocumentoActualizar.as_view(template_name = "tipodocumento/actualizar.html"), name='actualizar'), 
+ 
+    # La ruta 'eliminar' que usaremos para eliminar un Tipodocumento o registro de la Base de Datos 
+    path('tipodocumento/eliminar/<int:pk>', TipodocumentoEliminar.as_view(), name='tipodocumento/eliminar.html'),    
+
+
+
+
+    path('reservas/', ListadoReservas.as_view(template_name = "reservas/inicio.html"), name='leer'),
+ 
+    # La ruta 'detalles' en donde mostraremos una página con los detalles de un Reservas o registro 
+    path('reservas/detalle/<int:pk>', ReservasDetalle.as_view(template_name = "reservas/detalle.html"), name='detalles'),
+ 
+    # La ruta 'crear' en donde mostraremos un formulario para crear un nuevo Reservas o registro  
+    path('reservas/crear', ReservasCrear.as_view(template_name = "reservas/crear.html"), name='crear'),
+ 
+    # La ruta 'actualizar' en donde mostraremos un formulario para actualizar un Reservaso registro de la Base de Datos 
+    path('reservas/editar/<int:pk>', ReservasActualizar.as_view(template_name = "reservas/actualizar.html"), name='actualizar'), 
+ 
+    # La ruta 'eliminar' que usaremos para eliminar un Reservas o registro de la Base de Datos 
+    path('reservas/eliminar/<int:pk>', ReservasEliminar.as_view(), name='reservas/eliminar.html'),    
+
+ 
 ]
+
+
     
 
     
