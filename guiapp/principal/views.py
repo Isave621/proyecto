@@ -31,6 +31,9 @@ def comienzo(request):
 def usuario(request):
     return render (request,'paginas/admin.html')
 
+def clienteUs(request):
+    return render (request,'paginas/cliente.html')
+
 
 
 
