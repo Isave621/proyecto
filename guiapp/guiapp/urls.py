@@ -236,7 +236,26 @@ urlpatterns = [
     path('comienzo/clienteUs/persona/editar/<int:pk>', PersonaActualizar.as_view(template_name = "persona/actualizar.html"), name='actualizar'), 
  
     # La ruta 'eliminar' que usaremos para eliminar un persona o registro de la Base de Datos 
-    path('comienzo/clienteUs/persona/eliminar/<int:pk>', PersonaEliminar.as_view(), name='persona/eliminar.html'),    
+    path('comienzo/clienteUs/persona/eliminar/<int:pk>', PersonaEliminar.as_view(), name='persona/eliminar.html'),  
+
+
+
+    path('tipoevento/', ListadoTipoeventos.as_view(template_name = "tipoevento/index.html"), name='leer'),
+ 
+    # La ruta 'detalles' en donde mostraremos una página con los detalles de un tipoevento o registro 
+    path('tipoevento/detalle/<int:pk>', TipoeventosDetalle.as_view(template_name = "tipoevento/detalle.html"), name='detalles'),
+ 
+    # La ruta 'crear' en donde mostraremos un formulario para crear un nuevo tipoevento o registro  
+    path('tipoevento/crear', TipoeventosCrear.as_view(template_name = "tipoevento/crear.html"), name='crear'),
+ 
+    # La ruta 'actualizar' en donde mostraremos un formulario para actualizar un tipoeventoo registro de la Base de Datos 
+    path('tipoevento/editar/<int:pk>', TipoeventosActualizar.as_view(template_name = "tipoevento/actualizar.html"), name='actualizar'), 
+ 
+    # La ruta 'eliminar' que usaremos para eliminar un tipoevento o registro de la Base de Datos 
+    path('tipoevento/eliminar/<int:pk>', TipoeventosEliminar.as_view(), name='tipoevento/eliminar.html'),    
+
+
+  
 ]
 
 

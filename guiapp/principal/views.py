@@ -34,6 +34,10 @@ def usuario(request):
 def clienteUs(request):
     return render (request,'paginas/cliente.html')
 
+def danita(request):
+    return render(request, 'ejemplo.html')
+
+
 
 
 
@@ -558,5 +562,58 @@ class PersonaEliminar(SuccessMessageMixin, DeleteView):
         success_message = 'Persona Eliminado Correctamente !' # Mostramos este Mensaje luego de Editar un Postre 
         messages.success (self.request, (success_message))       
         return reverse('leer') # Redireccionamos a la vista principal 'leer'
+#
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+class ListadoTipoeventos(ListView):
+    model = Tipoeventos
+    
+    
+class TipoeventosCrear(SuccessMessageMixin, CreateView):
+    model =Tipoeventos
+    form = Tipoeventos
+    fields = "__all__"
+    success_message ='Tipoeventos creada correctamente'
+     
+    def get_success_url(self):        
+        return reverse('leer') # Redireccionamos a la vista principal 'leer'
+
+class TipoeventosDetalle (DetailView):
+    model =Tipoeventos
+
+class  TipoeventosActualizar(SuccessMessageMixin,UpdateView):
+    model =  Tipoeventos
+    form = Tipoeventos
+    fields = "__all__" # Le decimos a Django que muestre todos los campos de la tabla 'postres' de nuestra Base de Datos 
+    success_message = 'Tipoeventos Actualizado Correctamente !' # Mostramos este Mensaje luego de Editar un Postre 
+
+    def get_success_url(self):               
+        return reverse('leer') # Redireccionamos a la vista principal 'leer'
+class TipoeventosEliminar(SuccessMessageMixin, DeleteView): 
+    model = Tipoeventos 
+    form = Tipoeventos
+    fields = "__all__"     
+ 
+    # Redireccionamos a la página principal luego de eliminar un registro o postre
+    def get_success_url(self): 
+        success_message = 'Tipoeventos Eliminado Correctamente !' # Mostramos este Mensaje luego de Editar un Postre 
+        messages.success (self.request, (success_message))       
+        return reverse('leer') # Redireccionamos a la vista principal 'leer
 
     
