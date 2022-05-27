@@ -12,24 +12,24 @@
     
     <!-- {{ form.as_p }} -->
     <div class="form-group">
-      <label for="idserviciotour" class="txt_negrita">Codigo serviciotour</label>
-      {{ form.idserviciotour|add_class:"form-control" }} <!-- Usamos la librería 'widget_tweaks' para crear esta caja de texto -->
+      <label for="idsitiosturisticos" class="txt_negrita">Codigo de lugar</label>
+      {{ form.idsitiosturisticos|add_class:"form-control" }} <!-- Usamos la librería 'widget_tweaks' para crear esta caja de texto -->
     </div>
     <div class="form-group">
       <label for="nombre" class="txt_negrita">Nombre</label>
       {{ form.nombre|add_class:"form-control" }}
     </div>
     <div class="form-group">
-        <label for="precio" class="txt_negrita">Precio</label>
-        {{ form.precio|add_class:"form-control" }}
+      <label for="direccion" class="txt_negrita">Dirección</label>
+      {{ form.direccion|add_class:"form-control" }}
     </div>
     <div class="form-group">
-        <label for="estado" class="txt_negrita">Estado</label>
-        {{ form.estado|add_class:"form-control" }}
+        <label for="descripcion" class="txt_negrita">Descripción</label>
+        {{ form.descripcion|add_class:"form-control" }}
     </div>
     <div class="form-group">
-      <label for="descripcion" class="txt_negrita">Descripcion</label>
-      {{ form.descripcion|add_class:"form-control" }}
+        <label for="horario" class="txt_negrita">Horario</label>
+        {{ form.horario|add_class:"form-control" }}
     </div>
 
     <button type="submit" class="btn btn-primary">Aceptar</button>

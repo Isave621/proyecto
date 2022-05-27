@@ -1,13 +1,11 @@
-<head>
-         
-    {# Cargamos la librería #}
+{# Cargamos la librería #}
     {% load bootstrap4 %}
-  
+ 
     {# CSS Bootstrap #}
     {% bootstrap_css %} 
     {# Archivos #}
     {% load static %}
-  
+
      
     {% if messages %}
     <ul class="messages list-group mb-3">
@@ -16,38 +14,46 @@
       {% endfor %}
     </ul>
     {% endif %}
-  
-  </head>
-  <body>
+ 
+</head>
+<body>
     {# JS y jQuery Bootstrap #}
     {% bootstrap_javascript jquery='full' %} 
     <div align="left" class="btn_crear mb-3">
       <a href="crear" type="button" class="btn btn-primary">Crear</a>
     </div>
-     <!--listando los treserva en una tabla HTML-->
+     <!--listando los tOfertva en una tabla HTML-->
     <table class="table table-striped table-hover">
         <thead>
           <tr>
-            <th width="35%">Código Tipo documento</th>
-            <th>Denominación</th>
+            <th width="35%">Código de ofertas </th>
+            <th>Precios</th>
+            <th>Nombre</th>
+            <th>Fechainicio</th>
+            <th>Fechafinal</th>
+            <th>Descripcion</th>
           </tr>
         </thead>
         <tbody>
         
-        <!-- Recorremos los objetos o registros que tenemos en nuestra tabla 'treserva' y los listamos -->
-        {% for Tdocumento in object_list %}
+        <!-- Recorremos los objetos o registros que tenemos en nuestra tabla 'Ofert' y los listamos -->
+        {% for Ofert in object_list %}
           <tr>
-            <td>{{ Tdocumento.idtipodocumento }}</td>
-            <td>{{ Tdocumento.denominacion }}</td>
+            <td>{{ Ofert.idofertas}}</td>
+            <td>{{ Ofert.precios}}</td>
+            <td>{{ Ofert.nombre}}</td>
+            <td>{{ Ofert.fechainicio }}</td>
+            <td>{{ Ofert.fechafinal}}</td>
+            <td>{{ Ofert.descripcion }}</td>
             <td>
              <!-- Usaremos un formulario que realizará la tarea de eliminar un registro o postre desde la misma tabla HTML -->                        
-        <form method="POST" action="eliminar/{{Tdocuemnto.idtipodocumento}}">
+        <form method="POST" action="eliminar/{{Ofert.idofertas}">
             {% csrf_token %}
             <div class="btn-group">
    
               <!-- Creamos 3 botones que son ver, Editar y Eliminar, nos sirven para gestionar nuestros registros o postres -->
-              <a href="detalle/{{Tdocumento.idtipodocumento}}" title="Ver" type="button" class="btn btn-success">Ver </a>
-              <a href="editar/{{Tdocumento.idtipodocumento}}" title="Editar" type="button" class="btn btn-primary">Editar </a>
+              <a href="detalle/{{Ofert.idofertas}" title="Ver" type="button" class="btn btn-success">Ver </a>
+              <a href="editar/{{Ofert.idofertas}}" title="Editar" type="button" class="btn btn-primary">Editar </a>
               <button class="btn btn-danger" onclick="return eliminar();" type="submit">
                 Eliminar
               </button>
@@ -71,6 +77,5 @@
   </script>  
   {# JS y jQuery Bootstrap #}
   
-  </body {% bootstrap_javascript jquery='full' %} >
-  </html>
-  
+</body {% bootstrap_javascript jquery='full' %} >
+</html>

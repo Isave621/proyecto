@@ -9,10 +9,13 @@
 <table class="table table-striped table-hover">
     <thead>
       <tr>
-        <th width="35%">Codigo categoria</th>
+        <th width="35%">Codigo eventos</th>
         <th>Nombre</th>
-        <th>Precio</th>
-        <th>Estado</th>
+        <th>Numerocontacto</th>
+        <th>Horarioinicio</th>
+        <th>Horariofinal</th>
+        <th>Direccion</th>
+        <th>Sitioweb</th>
         <th>Descripcion</th>
       </tr>
     </thead>
@@ -20,11 +23,14 @@
    
     {% for categoria in object_list %}
       <tr>
-        <td>{{ categoria.idserviciotour }}</td>
+        <td>{{ categoria.ideventos}}</td>
         <td>{{ categoria.nombre }}</td>
-        <td>{{ categoria.precio}}</td>
-        <td>{{ categoria.estado}}</td>
-        <td>{{ categoria.descripcion}}</td>
+        <td>{{ categoria.numerocontacto}}</td>
+        <td>{{ categoria.horarioinicio }}</td>
+        <td>{{ categoria.horariofinal }}</td>
+        <td>{{ categoria.direccion }}</td>
+        <td>{{ categoria.sitioweb}}</td>
+        <td>{{ categoria.descripcion }}</td>
         <td>
    
           <!-- Usaremos un formulario que realizará la tarea de eliminar un registro o postre desde la misma tabla HTML -->                        
@@ -32,8 +38,8 @@
             {% csrf_token %}
             <div class="btn-group">
               
-              <a href="detalle/{{categoria.idserviciotour }}" title="Ver" type="button" class="btn btn-success">Ver </a>
-              <a href="editar/{{categoria.idserviciotour }}" title="Editar" type="button" class="btn btn-primary">Editar </a>
+              <a href="detalle/{{categoria.ideventos}}" title="Ver" type="button" class="btn btn-success">Ver </a>
+              <a href="editar/{{categoria.ideventos}}" title="Editar" type="button" class="btn btn-primary">Editar </a>
               
               <!-- Este botón ejecuta el formulario para eliminar un registro o postre en la Base de datos -->
               <button class="btn btn-danger" onclick="return eliminar();" type="submit">

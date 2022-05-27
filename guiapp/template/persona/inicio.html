@@ -28,26 +28,46 @@
     <table class="table table-striped table-hover">
         <thead>
           <tr>
-            <th width="35%">Código Tipo documento</th>
-            <th>Denominación</th>
+            <th width="35%">Código de la persona</th>
+            <th>Nombre</th>
+            <th>Apellido</th>
+            <th>Correo</th>
+            <th>Telefono</th>
+            <th>Identificación</th>
+            <th>Dirección</th>
+            <th>Edad</th>
+            <th>Celular</th>
+            <th>Fecha de nacimiento</th>            
+            <th>Contraseña</th>
+            <th>Sexo</th>
           </tr>
         </thead>
         <tbody>
         
         <!-- Recorremos los objetos o registros que tenemos en nuestra tabla 'treserva' y los listamos -->
-        {% for Tdocumento in object_list %}
+        {% for personaT in object_list %}
           <tr>
-            <td>{{ Tdocumento.idtipodocumento }}</td>
-            <td>{{ Tdocumento.denominacion }}</td>
+            <td>{{ personaT.field_idcliente }}</td>
+            <td>{{ personaT.nombre }}</td>
+            <td>{{ personaT.apellido }}</td>
+            <td>{{ personaT.correo }}</td>
+            <td>{{ personaT.telefono}}</td>
+            <td>{{ personaT.identificacion}}</td>
+            <td>{{ personaT.direccion}}</td>
+            <td>{{ personaT.edad}}</td>
+            <td>{{ personaT.celular}}</td>
+            <td>{{ personaT.fechanacimiento}}</td>
+            <td>{{ personaT.contrasena}}</td>
+            <td>{{ personaT.sexo}}</td>
             <td>
              <!-- Usaremos un formulario que realizará la tarea de eliminar un registro o postre desde la misma tabla HTML -->                        
-        <form method="POST" action="eliminar/{{Tdocuemnto.idtipodocumento}}">
+        <form method="POST" action="eliminar/{{personaT.field_idcliente}}">
             {% csrf_token %}
             <div class="btn-group">
    
               <!-- Creamos 3 botones que son ver, Editar y Eliminar, nos sirven para gestionar nuestros registros o postres -->
-              <a href="detalle/{{Tdocumento.idtipodocumento}}" title="Ver" type="button" class="btn btn-success">Ver </a>
-              <a href="editar/{{Tdocumento.idtipodocumento}}" title="Editar" type="button" class="btn btn-primary">Editar </a>
+              <a href="detalle/{{personaT.field_idcliente}}" title="Ver" type="button" class="btn btn-success">Ver </a>
+              <a href="editar/{{personaT.field_idcliente}}" title="Editar" type="button" class="btn btn-primary">Editar </a>
               <button class="btn btn-danger" onclick="return eliminar();" type="submit">
                 Eliminar
               </button>
@@ -73,4 +93,3 @@
   
   </body {% bootstrap_javascript jquery='full' %} >
   </html>
-  
